@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-button fill="clear" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title color="primary">
+            Sign Up
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <p class="ion-margin-top ion-text-center description">
+        Wammer Turns Sharing Fun Photos and Videos<br>With Your Friends into a Game
+    </p>
+
+    <ion-list class="signup-form">
+        <form [formGroup]="signupForm"></form>
+        <ion-item>
+            <ion-input formControlName="firstName" placeholder="First Name" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input formControlName="lastName" placeholder="Last Name" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input formControlName="email" placeholder="Email" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input formControlName="password" placeholder="Password" [type]="showPassword ? 'text' : 'password'" autocomplete="off"></ion-input>
+            <ion-icon (click)="showPassword = !showPassword" color="primary" slot="end" [name]="showPassword ? 'eye' : 'eye-off'"></ion-icon>
+        </ion-item>
+    </ion-list>
+
+    <p class="terms">
+        By continuing you agree to the Wammer<br><a>Terms of Service</a> and <a>Privacy Policy</a>
+    </p>
+</ion-content>
+
+<ion-footer color="light">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button (click)="goBack()" expand="block" fill="solid" color="primary">Back</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button (click)="goBack()" expand="block" fill="outline" color="primary">Next</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>
